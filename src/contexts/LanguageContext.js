@@ -196,11 +196,11 @@ const translations = {
     privacy_policy: 'Privacy Policy',
     terms_of_service: 'Terms of Service',
     opening_hours: 'Opening hours',
-    address_value: '456, 1st Saint Street<br />Ottawa, ON K1A 2B3',
+    address_value: '1201 Bd Saint-Joseph Gatineau, QC J8Z 2C3',
     phone_value: '+1 514 123 4567',
     email_value: 'info@clotureplante.com',
     areas_value: 'Ottawa, Gatineau',
-    hours_value: 'Mon-Fri: 8am - 6pm<br />Sat: 9am - 2pm',
+    hours_value: 'Monday - Friday 8am - 4pm',
     copyright: '© 2025 All rights reserved | Privacy Policy | Plan | Web: Created by ABCD Agency'
   },
   FR: {
@@ -394,11 +394,11 @@ const translations = {
     phone: 'Téléphone',
     email: 'E-mail',
     opening_hours: 'Heures d\'ouverture',
-    address_value: '456, 1re Rue Saint<br />Ottawa, ON K1A 2B3',
+    address_value: '1201 Bd Saint-Joseph Gatineau, QC J8Z 2C3',
     phone_value: '+1 514 123 4567',
     email_value: 'info@clotureplante.com',
     areas_value: 'Ottawa, Gatineau',
-    hours_value: 'Lun-Ven: 8h - 18h<br />Sam: 9h - 14h',
+    hours_value: 'Lundi - Vendredi 8h - 16h',
     copyright: '© 2025 Tous droits réservés | Politique de confidentialité | Plan | Web: Créé par ABCD Agency'
   }
 };
