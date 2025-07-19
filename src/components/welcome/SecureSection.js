@@ -4,7 +4,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 
 const SecureSection = () => {
   const { t } = useLanguage();
-  
+
   return (
   <section className="relative bg-white py-12 overflow-hidden">
     {/* Background image */}
@@ -27,7 +27,7 @@ const SecureSection = () => {
       </div>
     </div>
   </section>
-  );
+);
 };
 
 export default SecureSection; 

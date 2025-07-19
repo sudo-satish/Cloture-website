@@ -4,7 +4,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 
 const DiscoverSection = () => {
   const { t } = useLanguage();
-  
+
   return (
   <section className="relative py-16 bg-gray-100 text-center overflow-hidden">
     {/* Background image */}
@@ -15,7 +15,7 @@ const DiscoverSection = () => {
       <a href="#" className="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded transition font-semibold text-lg shadow">{t('contact_us')}</a>
     </div>
   </section>
-  );
+);
 };
 
 export default DiscoverSection; 

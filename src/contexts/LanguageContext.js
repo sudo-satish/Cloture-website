@@ -128,6 +128,9 @@ const translations = {
     crystal: 'Crystal/Contour Crystal',
     crystal_desc: 'Transparency and brightness, a cutting edge choice. Offers an unobstructed view of your garden or landscape, bringing a bright and airy look to your space, while ensuring optimal security.',
     farmland_excellence: 'YOUR FARMLAND DESERVES EXCELLENCE.',
+    privacy_policy: 'Privacy Policy',
+    plant_fence: 'Plant Fence',
+    created_by: 'Created by Adil SEO agency',
     
     // Gallery Section
     portfolio_perfection: 'A PORTFOLIO OF PERFECTION',
@@ -321,6 +324,9 @@ const translations = {
     crystal: 'Cristal/Contour Cristal',
     crystal_desc: 'Transparence et luminosité, un choix de pointe. Offre une vue dégagée de votre jardin ou paysage, apportant un look lumineux et aéré à votre espace, tout en assurant une sécurité optimale.',
     farmland_excellence: 'VOTRE TERRAIN AGRICOLE MÉRITE L\'EXCELLENCE.',
+    privacy_policy: 'Politique de Confidentialité',
+    plant_fence: 'Clôture Plante',
+    created_by: 'Créé par Adil SEO agency',
     
     // Gallery Section
     portfolio_perfection: 'UN PORTEFEUILLE DE PERFECTION',

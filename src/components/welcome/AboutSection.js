@@ -4,7 +4,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 
 const AboutSection = () => {
   const { t } = useLanguage();
-  
+
   return (
   <section className="bg-black text-white py-12">
     <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -22,7 +22,7 @@ const AboutSection = () => {
       </div>
     </div>
   </section>
-  );
+);
 };
 
 export default AboutSection; 

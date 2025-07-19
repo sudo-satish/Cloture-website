@@ -68,25 +68,25 @@ const AgricultureFencingPage = () => (
 function App() {
   return (
     <LanguageProvider>
-      <div className="font-sans bg-gray-50">
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Router>
-            <Header />
-            <Routes>
-              <Route path="/" element={<WelcomePage />} />
-              <Route path="/contact" element={<Contact />} />
+    <div className="font-sans bg-gray-50">
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<WelcomePage />} />
+            <Route path="/contact" element={<Contact />} />
               <Route path="/gallery" element={<Gallery />} />
-              <Route path="/appointment" element={<Appointment />} />
+            <Route path="/appointment" element={<Appointment />} />
               <Route path="/services/fence-installation" element={<FenceInstallation />} />
               <Route path="/services/fence-straightening-repair" element={<FenceStraighteningAndRepair />} />
               <Route path="/services/temporary-fence-rental" element={<TemporaryFenceRental />} />
               <Route path="/services/custom-agricultural-fencing" element={<AgricultureFencingPage />} />
-              <Route path="/services/fencing-railings" element={<FencingRailingsPage />} />
-            </Routes>
-            <Footer />
-          </Router>
-        </React.Suspense>
-      </div>
+            <Route path="/services/fencing-railings" element={<FencingRailingsPage />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </React.Suspense>
+    </div>
     </LanguageProvider>
   );
 }

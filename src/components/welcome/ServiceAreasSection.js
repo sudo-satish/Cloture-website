@@ -21,7 +21,7 @@ const ServiceAreasSection = () => {
       </div>
     </div>
   </section>
-  );
+);
 };
 
 export default ServiceAreasSection; 

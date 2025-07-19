@@ -4,7 +4,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 
 const HeroSection = () => {
   const { t } = useLanguage();
-  
+
   return (
   <section className="relative h-[85vh] md:h-[100vh] flex items-center justify-start bg-black">
     {/* Background image */}
@@ -20,7 +20,7 @@ const HeroSection = () => {
       <a href="#" className="bg-orange-500 hover:bg-orange-600 text-black font-semibold text-lg px-10 py-3 rounded transition shadow mb-2 tracking-wide" style={{letterSpacing: '1px'}}>{t('contact_us')}</a>
     </div>
   </section>
-  );
+);
 };
 
 export default HeroSection; 

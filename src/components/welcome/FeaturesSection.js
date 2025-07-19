@@ -5,7 +5,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 
 const FeaturesSection = () => {
   const { t } = useLanguage();
-  
+
   return (
   <section className="max-w-7xl mx-auto px-4 py-16 text-center">
     <h2 className="text-xl md:text-2xl font-semibold mb-2 tracking-wide text-gray-700">{t('art_of_enclosing')}</h2>
@@ -23,7 +23,7 @@ const FeaturesSection = () => {
       <a href="#" className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded transition font-semibold text-sm shadow">{t('contact_us_lower')}</a>
     </div>
   </section>
-  );
+);
 };
 
 export default FeaturesSection; 

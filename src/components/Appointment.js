@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Appointment = () => {
   const { t } = useLanguage();
-  
+
   return (
   <div className="w-full min-h-[calc(100vh-64px)] flex flex-col justify-between">
     {/* Top section with black bg */}
@@ -22,7 +22,7 @@ const Appointment = () => {
       </div>
     </div>
   </div>
-  );
+);
 };
 
 export default Appointment; 

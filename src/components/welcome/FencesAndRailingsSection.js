@@ -30,7 +30,7 @@ const FencesAndRailingsSection = () => {
       </div>
     </div>
   </section>
-  );
+);
 };
 
 export default FencesAndRailingsSection; 
