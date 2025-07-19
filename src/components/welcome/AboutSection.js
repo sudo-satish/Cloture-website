@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 const AboutSection = () => (
   <section className="bg-black text-white py-12">

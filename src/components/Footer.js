@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../assets/logo.png';
 
 const Footer = () => (
-  <footer className="bg-black text-white py-10 mt-8">
+  <footer className="bg-black text-white py-10 ">
     <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Logo and Address */}
       <div>

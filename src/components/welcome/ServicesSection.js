@@ -1,10 +1,10 @@
 import React from 'react';
-import workerDrill from '../assets/fence-installation.jpeg';
-import workerMeasure from '../assets/repair.jpeg';
-import largeFence from '../assets/rental.jpeg';
-import rollsFencing from '../assets/custom.jpeg';
-import FencingnRailing from '../assets/railing.jpeg';
-import servicesContact from '../assets/services-contact.webp';
+import workerDrill from '../../assets/welcome/fence-installation.jpeg';
+import workerMeasure from '../../assets/welcome/repair.jpeg';
+import largeFence from '../../assets/welcome/rental.jpeg';
+import rollsFencing from '../../assets/welcome/custom.jpeg';
+import FencingnRailing from '../../assets/welcome/railing.jpeg';
+import servicesContact from '../../assets/welcome/services-contact.webp';
 
 const services = [
   { img: workerDrill, alt: 'Worker with drill', caption: 'Fence installation' },

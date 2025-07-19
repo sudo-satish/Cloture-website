@@ -1,6 +1,6 @@
 import React from 'react';
-import decorativeFence from '../assets/hero3.jpg';
-import modernFence from '../assets/hero3.webp';
+import modernFence from '../../assets/welcome/hero3.jpg';
+import decorativeFence from '../../assets/welcome/hero3.webp';
 
 const FeaturesSection = () => (
   <section className="max-w-7xl mx-auto px-4 py-16 text-center">

@@ -1,5 +1,5 @@
 import React from 'react';
-import heroBg from '../assets/hero-bg.webp';
+import heroBg from '../../assets/welcome/hero-bg.webp';
 
 const HeroSection = () => (
   <section className="relative h-[85vh] md:h-[100vh] flex items-center justify-start bg-black">

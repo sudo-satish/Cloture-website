@@ -1,5 +1,5 @@
 import React from 'react';
-import discoverBg from '../assets/service-areas-bg.jpg';
+import discoverBg from '../../assets/welcome/service-areas-bg.jpg';
 
 const DiscoverSection = () => (
   <section className="relative py-16 bg-gray-100 text-center overflow-hidden">

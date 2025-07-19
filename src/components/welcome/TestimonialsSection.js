@@ -14,6 +14,7 @@ const testimonials = [
     text: `Personnel courtois et très grande expertise dans le domaine! Je recommande pour tout projet!💯`
   },
   {
+    
     name: 'Roxana Orué',
     date: '2024-11-09',
     img: 'https://lh3.googleusercontent.com/a/ACg8ocL7dcUhvIwMi20-SyJmrEdFKulv-fweGnCOzN4RtStfIOb1QAI=w64-h64-c-rp-mo-ba2-br100',
@@ -100,35 +101,37 @@ const TestimonialsSection = () => {
   return (
     <section className="bg-gray-100 py-16">
       <h3 className="text-center text-lg md:text-xl font-semibold mb-8 text-gray-700">OUR CUSTOMERS' OPINIONS</h3>
-      <div className="max-w-6xl mx-auto flex gap-8 overflow-x-hidden transition-all duration-700 ease-in-out px-4 items-center">
-        <button onClick={scrollLeft} aria-label="Previous" className="self-center p-2 rounded-full bg-white shadow hover:bg-orange-100 transition mr-2 border border-orange-500 flex-shrink-0">
+      <div className="max-w-6xl mx-auto flex items-center justify-center gap-2">
+        <button onClick={scrollLeft} aria-label="Previous" className="p-2 rounded-full bg-white shadow hover:bg-orange-200 transition border border-orange-500 flex-shrink-0">
           <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
         </button>
-        {visible.map((t, idx) => {
-          const realIdx = (start + idx) % testimonials.length;
-          const isLong = t.text.length > 200;
-          const displayText = expanded[realIdx] || !isLong ? t.text : t.text.slice(0, 200) + '...';
-          return (
-            <div key={realIdx} className="bg-white rounded shadow p-6 flex flex-col items-center text-center w-full min-w-[320px] max-w-[400px] transition-all duration-700 ease-in-out">
-              <img src={t.img} alt={t.name} className="w-16 h-16 rounded-full object-cover mb-2 border-2 border-orange-400" />
-              <div className="flex items-center justify-center mb-1">
-                {[...Array(5)].map((_, i) => <Star key={i} />)}
+        <div className="flex gap-8 overflow-x-hidden transition-all duration-700 ease-in-out">
+          {visible.map((t, idx) => {
+            const realIdx = (start + idx) % testimonials.length;
+            const isLong = t.text.length > 200;
+            const displayText = expanded[realIdx] || !isLong ? t.text : t.text.slice(0, 200) + '...';
+            return (
+              <div key={realIdx} className="bg-white rounded shadow p-6 flex flex-col items-center text-center w-full min-w-[320px] max-w-[400px] transition-all duration-700 ease-in-out">
+                <img src={t.img} alt={t.name} className="w-16 h-16 rounded-full object-cover mb-2 border-2 border-orange-400" />
+                <div className="flex items-center justify-center mb-1">
+                  {[...Array(5)].map((_, i) => <Star key={i} />)}
+                </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  {displayText}
+                  {isLong && (
+                    <button className="ml-2 text-orange-500 underline text-xs hover:text-orange-700 transition" onClick={() => handleReadMore(realIdx)}>
+                      {expanded[realIdx] ? 'Read less' : 'Read more'}
+                    </button>
+                  )}
+                </p>
+                <span className="text-gray-800 font-semibold text-sm">{t.name}</span>
+                <span className="text-gray-400 text-xs mt-1">{t.date}</span>
               </div>
-              <p className="text-gray-600 text-sm mb-2">
-                {displayText}
-                {isLong && (
-                  <button className="ml-2 text-orange-500 underline text-xs hover:text-orange-700 transition" onClick={() => handleReadMore(realIdx)}>
-                    {expanded[realIdx] ? 'Read less' : 'Read more'}
-                  </button>
-                )}
-              </p>
-              <span className="text-gray-800 font-semibold text-sm">{t.name}</span>
-              <span className="text-gray-400 text-xs mt-1">{t.date}</span>
-            </div>
-          );
-        })}
-        <button onClick={scrollRight} aria-label="Next" className="self-center p-2 rounded-full bg-orange-500 shadow hover:bg-orange-600 transition ml-2 border border-orange-500 flex-shrink-0">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            );
+          })}
+        </div>
+        <button onClick={scrollRight} aria-label="Next" className="p-2 rounded-full bg-white shadow hover:bg-orange-200 transition border border-orange-500 flex-shrink-0">
+          <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
     </section>
