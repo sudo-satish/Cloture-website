@@ -39,10 +39,10 @@ const Header = () => {
     <header className="w-full bg-black bg-opacity-70 fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition">
           <img src={logo} alt="Clôture Plante Logo" className="h-12 w-12 object-contain" />
           <span className="text-white font-bold text-lg tracking-widest uppercase">Clôture Plante</span>
-        </div>
+        </Link>
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className={`text-white hover:text-orange-500 transition${location.pathname === '/' ? ' font-bold' : ''}`}>{t('home')}</Link>
