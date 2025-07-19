@@ -1,10 +1,11 @@
 import React from 'react';
+import { useLanguage } from '../../../contexts/LanguageContext';
 // Replace with actual images when provided
-import img1 from '../../assets/service_5/fence_1.jpeg';
-import img2 from '../../assets/service_5/fence_2.jpg';
-import img3 from '../../assets/service_5/fence_3.jpeg';
-import img4 from '../../assets/service_5/fence_4.jpg';
-import img5 from '../../assets/service_5/fence_5.webp';
+import img1 from '../../../assets/fencing_and_railing/fence_1.jpeg';
+import img2 from '../../../assets/fencing_and_railing/fence_2.jpg';
+import img3 from '../../../assets/fencing_and_railing/fence_3.jpeg';
+import img4 from '../../../assets/fencing_and_railing/fence_4.jpg';
+import img5 from '../../../assets/fencing_and_railing/fence_5.webp';
 
 const fences = [
   {
@@ -35,10 +36,41 @@ const fences = [
   
 ];
 
-const FencesGridSection = () => (
+const FencesGridSection = () => {
+  const { t } = useLanguage();
+  
+  const fences = [
+    {
+      img: img1,
+      title: t('ornamental'),
+      desc: t('ornamental_desc')
+    },
+    {
+      img: img2,
+      title: t('composite'),
+      desc: t('composite_desc')
+    },
+    {
+      img: img3,
+      title: t('panoramic'),
+      desc: t('panoramic_desc')
+    },
+    {
+      img: img4,
+      title: t('mesh'),
+      desc: t('mesh_desc')
+    },
+    {
+      img: img5,
+      title: t('crystal'),
+      desc: t('crystal_desc')
+    },
+  ];
+  
+  return (
   <section className="w-full bg-[#333] py-12 px-4">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-white text-3xl font-bold mb-8">FENCES</h2>
+      <h2 className="text-white text-3xl font-bold mb-8">{t('fences')}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {fences.map((f, i) => (
           <div key={i} className="bg-white rounded shadow flex flex-col h-full">
@@ -49,9 +81,10 @@ const FencesGridSection = () => (
             </div>
           </div>
         ))}
+              </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+    );
+  };
 
 export default FencesGridSection; 

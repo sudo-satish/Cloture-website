@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { galleryImages, heroBackgroundImage, contactBackgroundImage } from '../../assets/gallary/index';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const { t } = useLanguage();
 
   return (
     <>
@@ -22,12 +24,12 @@ const Gallery = () => {
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
           {/* Subtitle */}
           <h2 className="text-base md:text-lg lg:text-xl font-medium mb-4 text-orange-500 uppercase tracking-wide">
-            Plant Fence
+            {t('plant_fence')}
           </h2>
           
           {/* Main Title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-8 text-white">
-            Gallery
+            {t('gallery')}
           </h1>
           
           {/* Contact Button */}
@@ -35,7 +37,7 @@ const Gallery = () => {
             href="#contact" 
             className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg text-base uppercase tracking-wide shadow-lg transition-colors duration-300 inline-block"
           >
-            Contact Us
+            {t('contact_us')}
           </a>
         </div>
       </section>
@@ -56,10 +58,10 @@ const Gallery = () => {
             {/* Portfolio Content */}
             <div className="relative z-10 max-w-6xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                A PORTFOLIO OF PERFECTION
+                {t('portfolio_perfection')}
               </h2>
               <p className="text-lg md:text-xl text-white leading-relaxed max-w-5xl mx-auto">
-                Explore Clôture Plante's gallery to get inspired by the most beautiful fence and railing installations in Ottawa and Gatineau. Each project reflects our commitment to excellence!
+                {t('gallery_desc')}
               </p>
             </div>
           </div>
@@ -132,7 +134,7 @@ const Gallery = () => {
                       {galleryImages.find(img => img.id === selectedImage)?.category}
                     </span>
                     <span className="text-gray-400 text-xs">
-                      Click to close
+                      {t('click_to_close')}
                     </span>
                   </div>
                 </div>
@@ -180,7 +182,7 @@ const Gallery = () => {
           
           {/* Main Text */}
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-8 text-white">
-            See the extent of our expertise.
+            {t('see_expertise')}
           </h2>
           
           {/* Contact Button */}
@@ -188,7 +190,7 @@ const Gallery = () => {
             href="#contact" 
             className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg text-base uppercase tracking-wide shadow-lg transition-colors duration-300 inline-block"
           >
-            Contact Us
+            {t('contact_us')}
           </a>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../../../contexts/LanguageContext';
 
 const features = [
   {
@@ -27,10 +28,40 @@ const features = [
   },
 ];
 
-const BestChoiceSection = () => (
+const BestChoiceSection = () => {
+  const { t } = useLanguage();
+  
+  const features = [
+    {
+      icon: (
+        <svg width="56" height="56" fill="none" viewBox="0 0 56 56"><circle cx="28" cy="28" r="24" stroke="#888" strokeWidth="3" /><path d="M16 29l8 8 16-16" stroke="#888" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      ),
+      title: t('organization_equipment')
+    },
+    {
+      icon: (
+        <svg width="56" height="56" fill="none" viewBox="0 0 56 56"><circle cx="28" cy="28" r="24" stroke="#888" strokeWidth="3" /><text x="50%" y="50%" textAnchor="middle" dy=".3em" fontSize="28" fill="#888">$</text></svg>
+      ),
+      title: t('warranty_materials')
+    },
+    {
+      icon: (
+        <svg width="56" height="56" fill="none" viewBox="0 0 56 56"><circle cx="28" cy="28" r="24" stroke="#888" strokeWidth="3" /><text x="50%" y="50%" textAnchor="middle" dy=".3em" fontSize="28" fill="#888">😊</text></svg>
+      ),
+      title: t('wide_range_styles')
+    },
+    {
+      icon: (
+        <svg width="56" height="56" fill="none" viewBox="0 0 56 56"><circle cx="28" cy="28" r="24" stroke="#888" strokeWidth="3" /><path d="M40 28l-12 8V20l12 8z" stroke="#888" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /><circle cx="28" cy="28" r="4" fill="#888" /></svg>
+      ),
+      title: t('expert_advice')
+    },
+  ];
+  
+  return (
   <section className="w-full bg-[#f3f3f3] py-12 px-4">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-4xl font-extrabold text-center mb-12">PLANT FENCE: YOUR BEST CHOICE</h2>
+      <h2 className="text-4xl font-extrabold text-center mb-12">{t('best_choice')}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {features.map((f, i) => (
           <div key={i} className="bg-white border border-orange-400 rounded p-8 flex flex-col items-center text-center min-h-[220px]">
@@ -38,9 +69,10 @@ const BestChoiceSection = () => (
             <div className="font-bold text-lg text-gray-800">{f.title}</div>
           </div>
         ))}
+              </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+    );
+  };
 
 export default BestChoiceSection; 

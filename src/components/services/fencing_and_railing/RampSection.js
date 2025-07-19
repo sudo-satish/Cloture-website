@@ -1,7 +1,8 @@
 import React from 'react';
+import { useLanguage } from '../../../contexts/LanguageContext';
 // Replace with actual images when provided
-import img1 from '../../assets/service_5/ramp_1.webp';
-import img2 from '../../assets/service_5/ramp_2.jpg';
+import img1 from '../../../assets/fencing_and_railing/ramp_1.webp';
+import img2 from '../../../assets/fencing_and_railing/ramp_2.jpg';
 
 const ramps = [
   {
@@ -16,10 +17,26 @@ const ramps = [
   },
 ];
 
-const RampSection = () => (
+const RampSection = () => {
+  const { t } = useLanguage();
+  
+  const ramps = [
+    {
+      img: img1,
+      title: t('contour_title'),
+      desc: t('contour_desc')
+    },
+    {
+      img: img2,
+      title: t('aluminum_title'),
+      desc: t('aluminum_desc')
+    },
+  ];
+  
+  return (
   <section className="w-full bg-orange-500 py-12 px-4">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-white text-center text-3xl font-bold mb-8">RAMP</h2>
+      <h2 className="text-white text-center text-3xl font-bold mb-8">{t('ramp')}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {ramps.map((r, i) => (
           <div key={i} className="bg-white rounded shadow flex flex-col h-full">
@@ -34,9 +51,10 @@ const RampSection = () => (
             </div>
           </div>
         ))}
+              </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+    );
+  };
 
 export default RampSection; 

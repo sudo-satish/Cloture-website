@@ -1,5 +1,5 @@
 import React from 'react';
-import signatureBg from '../../assets/service_5/signature.jpeg';
+import signatureBg from '../../../assets/fencing_and_railing/signature.jpeg';
 import SignatureSection from './SignatureSection';
 import FarmlandExcellenceSection from './FarmlandExcellenceSection';
 

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,29 +29,28 @@ const ContactForm = () => {
       {/* Form */}
       <div className="w-full md:w-1/2 bg-gray-100 flex flex-col justify-center p-8">
         {submitted ? (
-          <div className="w-full max-w-lg mx-auto text-center text-2xl text-orange-600 font-semibold py-16">
-            Thank you for contacting us!<br />We will get back to you soon.
+          <div className="w-full max-w-lg mx-auto text-center text-2xl text-orange-600 font-semibold py-16" dangerouslySetInnerHTML={{ __html: t('thank_you') }}>
           </div>
         ) : (
           <form className="w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
             <div className="mb-8">
-              <label className="block text-black font-bold mb-2" htmlFor="name">Name : *</label>
+              <label className="block text-black font-bold mb-2" htmlFor="name">{t('name')}</label>
               <input className="w-full border-0 border-b-2 border-orange-500 bg-transparent focus:outline-none py-2 mb-4" id="name" name="name" type="text" required />
             </div>
             <div className="mb-8">
-              <label className="block text-black font-bold mb-2" htmlFor="email">E-mail : *</label>
+              <label className="block text-black font-bold mb-2" htmlFor="email">{t('email')}</label>
               <input className="w-full border-0 border-b-2 border-orange-500 bg-transparent focus:outline-none py-2 mb-4" id="email" name="email" type="email" required />
             </div>
             <div className="mb-8">
-              <label className="block text-black font-bold mb-2" htmlFor="phone">Phone : *</label>
+              <label className="block text-black font-bold mb-2" htmlFor="phone">{t('phone')}</label>
               <input className="w-full border-0 border-b-2 border-orange-500 bg-transparent focus:outline-none py-2 mb-4" id="phone" name="phone" type="tel" required />
             </div>
             <div className="mb-8">
-              <label className="block text-black font-bold mb-2" htmlFor="message">Message:</label>
+              <label className="block text-black font-bold mb-2" htmlFor="message">{t('message')}</label>
               <textarea className="w-full border-0 border-b-2 border-orange-500 bg-transparent focus:outline-none py-2 mb-4 min-h-[100px]" id="message" name="message" />
             </div>
             <div className="mt-8">
-              <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition text-lg">Send</button>
+              <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition text-lg">{t('send')}</button>
             </div>
           </form>
         )}

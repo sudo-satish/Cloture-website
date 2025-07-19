@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../../../contexts/LanguageContext';
 // Replace with actual image when provided
 
 const ArrowIcon = () => (
@@ -9,14 +10,18 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const FarmlandExcellenceSection = () => (
+const FarmlandExcellenceSection = () => {
+  const { t } = useLanguage();
+  
+  return (
   <section className="w-full bg-white py-12 px-4 flex flex-col md:flex-row items-center justify-center gap-8 max-w-7xl mx-auto">
     <div className="flex-1 flex flex-col justify-center bg-black rounded-lg p-8 text-white items-start">
       <ArrowIcon />
-      <h2 className="text-2xl md:text-3xl font-bold mb-4">YOUR FARMLAND DESERVES EXCELLENCE.</h2>
-      <a href="#" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded transition text-lg mb-2">CONTACT US</a>
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('farmland_excellence')}</h2>
+      <a href="#" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded transition text-lg mb-2">{t('contact_us')}</a>
     </div>
   </section>
-);
+  );
+};
 
 export default FarmlandExcellenceSection; 

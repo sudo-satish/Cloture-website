@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const testimonials = [
   {
@@ -72,6 +73,7 @@ const CARDS_TO_SHOW = 3;
 const AUTO_SCROLL_INTERVAL = 10000;
 
 const TestimonialsSection = () => {
+  const { t } = useLanguage();
   const [start, setStart] = useState(0);
   const [expanded, setExpanded] = useState(Array(testimonials.length).fill(false));
   const intervalRef = useRef();
@@ -100,19 +102,19 @@ const TestimonialsSection = () => {
 
   return (
     <section className="bg-gray-100 py-16">
-      <h3 className="text-center text-lg md:text-xl font-semibold mb-8 text-gray-700">OUR CUSTOMERS' OPINIONS</h3>
+      <h3 className="text-center text-lg md:text-xl font-semibold mb-8 text-gray-700">{t('customers_opinions')}</h3>
       <div className="max-w-6xl mx-auto flex items-center justify-center gap-2">
         <button onClick={scrollLeft} aria-label="Previous" className="p-2 rounded-full bg-white shadow hover:bg-orange-200 transition border border-orange-500 flex-shrink-0">
           <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
         </button>
         <div className="flex gap-8 overflow-x-hidden transition-all duration-700 ease-in-out">
-          {visible.map((t, idx) => {
+          {visible.map((testimonial, idx) => {
             const realIdx = (start + idx) % testimonials.length;
-            const isLong = t.text.length > 200;
-            const displayText = expanded[realIdx] || !isLong ? t.text : t.text.slice(0, 200) + '...';
+            const isLong = testimonial.text.length > 200;
+            const displayText = expanded[realIdx] || !isLong ? testimonial.text : testimonial.text.slice(0, 200) + '...';
             return (
               <div key={realIdx} className="bg-white rounded shadow p-6 flex flex-col items-center text-center w-full min-w-[320px] max-w-[400px] transition-all duration-700 ease-in-out">
-                <img src={t.img} alt={t.name} className="w-16 h-16 rounded-full object-cover mb-2 border-2 border-orange-400" />
+                <img src={testimonial.img} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover mb-2 border-2 border-orange-400" />
                 <div className="flex items-center justify-center mb-1">
                   {[...Array(5)].map((_, i) => <Star key={i} />)}
                 </div>
@@ -120,12 +122,12 @@ const TestimonialsSection = () => {
                   {displayText}
                   {isLong && (
                     <button className="ml-2 text-orange-500 underline text-xs hover:text-orange-700 transition" onClick={() => handleReadMore(realIdx)}>
-                      {expanded[realIdx] ? 'Read less' : 'Read more'}
+                      {expanded[realIdx] ? t('read_less') : t('read_more')}
                     </button>
                   )}
                 </p>
-                <span className="text-gray-800 font-semibold text-sm">{t.name}</span>
-                <span className="text-gray-400 text-xs mt-1">{t.date}</span>
+                <span className="text-gray-800 font-semibold text-sm">{testimonial.name}</span>
+                <span className="text-gray-400 text-xs mt-1">{testimonial.date}</span>
               </div>
             );
           })}
