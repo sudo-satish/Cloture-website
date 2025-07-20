@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../../contexts/LanguageContext';
+import Title from '../../Title';
 import {
   wallFence,
   temporaryFence
@@ -10,6 +11,7 @@ const TemporaryFenceRental = () => {
 
   return (
     <div className="temporary-fence-rental-page">
+      <Title title="Temporary Fence Rental Services - Flexible Fencing Solutions" />
       {/* Hero Section */}
       <section className="relative h-screen bg-cover bg-center bg-no-repeat overflow-hidden" style={{ backgroundImage: `url(${temporaryFence})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-85"></div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../../contexts/LanguageContext';
+import Title from '../../Title';
 import {
   processImage,
   drillImage,
@@ -11,6 +12,7 @@ const FenceStraighteningAndRepair = () => {
 
   return (
     <div className="fence-straightening-repair-page">
+      <Title title="Fence Straightening & Repair Services - Professional Fence Restoration" />
       {/* Hero Section */}
       <section className="relative h-screen bg-cover bg-center bg-no-repeat overflow-hidden" style={{ backgroundImage: `url(${fenceCutting})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-90"></div>

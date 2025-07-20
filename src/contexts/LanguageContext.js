@@ -15,7 +15,8 @@ const translations = {
     fencing_railings: 'Fencing and railings',
     
     // Hero Section
-    plant_fence: 'PLANT FENCE',
+    plant_fence: 'Plant Fence',
+    fencing_and_railings: 'Your fence installation experts in Ottawa and Gatineau',
     hero_title: 'Professional Fencing Solutions',
     hero_subtitle: 'Quality & Reliability',
     hero_description: 'Expert fence installation and repair services in Ottawa-Gatineau. From residential to commercial projects, we deliver exceptional results with premium materials and craftsmanship.',
@@ -82,7 +83,6 @@ const translations = {
     fences_desc: 'Ornamental, Privacy, Pool, Chain Link, Custom (Commercial/Residential)',
     ramps: 'Ramps',
     ramps_desc: 'Custom ramps and accessibility solutions',
-    fencing_and_railings: 'Fencing and railings',
     organization_equipment: 'Impeccable organization and state-of-the-art equipment for rapid installation.',
     warranty_materials: '15-year warranty on materials, for lasting peace of mind.',
     wide_range_styles: 'A wide range of styles to satisfy all aesthetic preferences.',
@@ -181,6 +181,8 @@ const translations = {
     solutionAdaptedDescription1: 'We provide flexible temporary fence rental solutions tailored to your specific project needs. Whether you need security for a construction site, event venue, or temporary property protection, our fences are designed to meet your requirements.',
     solutionAdaptedDescription2: 'Our temporary fences are built with durability and ease of installation in mind. We offer quick setup and removal services, ensuring your project timeline is never compromised while maintaining the highest standards of security and safety.',
     contactInfoMessage: 'Ready to secure your project? Contact us today for a customized temporary fence rental solution that fits your needs and budget.',
+    contactUs: 'CONTACT US',
+    galleryMessage: 'Explore our gallery to see our work in action.',
     
     // Footer
     footer_description: 'Professional fencing services in Ottawa-Gatineau.',
@@ -217,7 +219,8 @@ const translations = {
     fencing_railings: 'Clôtures et garde-corps',
     
     // Hero Section
-    plant_fence: 'CLÔTURE PLANTE',
+    plant_fence: 'Plant Fence',
+    fencing_and_railings: 'Vos experts en installation de clôtures à Ottawa et Gatineau',
     hero_title: 'Solutions de Clôture Professionnelles',
     hero_subtitle: 'Qualité et Fiabilité',
     hero_description: 'Services d\'installation et de réparation de clôtures experts à Ottawa-Gatineau.',
@@ -284,7 +287,6 @@ const translations = {
     fences_desc: 'Ornementales, Intimité, Piscine, Mailles de chaîne, Personnalisées (Commercial/Résidentiel)',
     ramps: 'Rampes',
     ramps_desc: 'Rampes personnalisées et solutions d\'accessibilité',
-    fencing_and_railings: 'Clôtures et garde-corps',
     organization_equipment: 'Organisation impeccable et équipement de pointe pour une installation rapide.',
     warranty_materials: 'Garantie de 15 ans sur les matériaux, pour une tranquillité d\'esprit durable.',
     wide_range_styles: 'Une large gamme de styles pour satisfaire toutes les préférences esthétiques.',
@@ -377,6 +379,8 @@ const translations = {
     solutionAdaptedDescription1: 'Nous fournissons des solutions de location de clôtures temporaires flexibles adaptées à vos besoins de projet spécifiques. Que vous ayez besoin de sécurité pour un chantier de construction, un lieu d\'événement ou une protection temporaire de propriété, nos clôtures sont conçues pour répondre à vos exigences.',
     solutionAdaptedDescription2: 'Nos clôtures temporaires sont construites avec la durabilité et la facilité d\'installation à l\'esprit. Nous offrons des services d\'installation et de retrait rapides, garantissant que votre calendrier de projet n\'est jamais compromis tout en maintenant les plus hauts standards de sécurité et de sûreté.',
     contactInfoMessage: 'Prêt à sécuriser votre projet? Contactez-nous aujourd\'hui pour une solution de location de clôture temporaire personnalisée qui correspond à vos besoins et à votre budget.',
+    contactUs: 'CONTACTEZ-NOUS',
+    galleryMessage: 'Explorez notre galerie pour voir notre travail en action.',
     
     // Footer
     footer_description: 'Services de clôture professionnels à Ottawa-Gatineau.',
@@ -419,7 +423,19 @@ export const LanguageProvider = ({ children }) => {
   });
 
   const t = (key) => {
-    return translations[language]?.[key] || key;
+    // First try to get the translation from the current language
+    const translation = translations[language]?.[key];
+    
+    // If not found, try English as fallback
+    const fallbackTranslation = translations['EN']?.[key];
+    
+    // If still not found, return the key itself
+    if (!translation && !fallbackTranslation) {
+      console.warn(`Missing translation for key: ${key} in language: ${language}`);
+      return key;
+    }
+    
+    return translation || fallbackTranslation;
   };
 
   const value = {

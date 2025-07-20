@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
+import Title from './components/Title';
+import Loader from './components/Loader';
 
 const Header = React.lazy(() => import('./components/Header'));
 const Footer = React.lazy(() => import('./components/Footer'));
@@ -35,6 +37,7 @@ const Gallery = React.lazy(() => import('./components/gallary/Gallery'));
 
 const WelcomePage = () => (
   <>
+    <Title title="Fencing & Railing Services - Professional Fence Installation & Repair" />
     <HeroSection />
     <FeaturesSection />
     <AboutSection />
@@ -49,6 +52,7 @@ const WelcomePage = () => (
 
 const FencingRailingsPage = () => (
   <>
+    <Title title="Fencing & Railings - Custom Farmland Solutions | Professional Installation" />
     <FencingHeroSection />
     <SignatureFarmlandSection />
     <FencingFencesGridSection />
@@ -60,6 +64,7 @@ const FencingRailingsPage = () => (
 
 const AgricultureFencingPage = () => (
   <>
+    <Title title="Custom Agricultural Fencing - Professional Farm Fence Solutions" />
     <AgricultureHeroSection />
     <AgricultureSignatureSection />
   </>
@@ -69,7 +74,7 @@ function App() {
   return (
     <LanguageProvider>
     <div className="font-sans bg-gray-50">
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense fallback={<Loader />}>
         <Router>
           <Header />
           <Routes>

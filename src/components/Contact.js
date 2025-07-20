@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../assets/logo.png';
 import bgImg from '../assets/contact-bg.jpg';
 import ContactForm from './ContactForm';
+import Title from './Title';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const ArrowIcon = () => (
@@ -17,6 +18,7 @@ const Contact = () => {
   
   return (
   <>
+    <Title title="Contact Us - Professional Fencing Services | Get Your Free Quote" />
     <div className="w-full min-h-screen flex items-center justify-center relative" style={{
       backgroundImage: `url(${bgImg})`,
       backgroundSize: 'cover',

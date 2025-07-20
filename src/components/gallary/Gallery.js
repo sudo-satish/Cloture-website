@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { galleryImages, heroBackgroundImage, contactBackgroundImage } from '../../assets/gallary/index';
+import Title from '../Title';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const Gallery = () => {
@@ -8,6 +9,7 @@ const Gallery = () => {
 
   return (
     <>
+      <Title title="Gallery - Professional Fencing Projects & Portfolio" />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}

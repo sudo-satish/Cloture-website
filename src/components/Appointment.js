@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo.png';
+import Title from './Title';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Appointment = () => {
@@ -7,6 +8,7 @@ const Appointment = () => {
 
   return (
   <div className="w-full min-h-[calc(100vh-64px)] flex flex-col justify-between">
+    <Title title="Book Appointment - Professional Fencing Consultation | Free Quote" />
     {/* Top section with black bg */}
     <div className="bg-black flex flex-col items-center justify-center py-16 px-4 flex-shrink-0">
       <img src={logo} alt="Clôture Plante Logo" className="h-24 md:h-32 mb-8" />
